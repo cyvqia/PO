@@ -1,15 +1,23 @@
-class Aluno:
-    def __init__(self, nome, idade, matricula):
+class Produto:
+    def __init__(self, nome, preco, quantidade):
         self.nome = nome
-        self.idade = idade
-        self.matricula = matricula
+        self.nome = preco
+        self.quantidade = quantidade
 
-    def apresentar(self):
-        print(f"Olá, meu nome é {self.nome}")
-        print(f"Tenho {self.idade} anos.")
-        print(f"A minha matrícula é {self.matricula}.")
+    def mostrar_dados(self):
+        print("produto: ", self.nome)
+        print("preço: ", self.preco)
+        print("quantidade em estoque: ", self.quantidade)
 
-info1 = Aluno("João", 20, 1928475)
-info2 = Aluno("Maria", 19, 112233)
+    def calcular_total(self):
+        total = self.preco * self.quantidade
+        print(f"valor total em estoque: R$ {total:.2f}")
 
-info1.apresentar()
+p1 = Produto ("mouse",50.00, 10)
+p2 = Produto ("teclado", 120.00, 5)
+
+p1.mostrar_dados()
+p1.calcular_total()
+
+p2.mostrar_dados()
+p2.calcular_total()
